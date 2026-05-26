@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@theme {
+  --color-takinbot-cyan: #00F2FE;
+  --color-takinbot-orange: #FF6B00;
+  --color-takinbot-dark: #0B0F19;
+  --color-takinbot-dark-soft: #121826;
+  --color-takinbot-light: #FAFAFA;
+  --color-takinbot-light-soft: #F1F5F9;
+  --color-takinbot-slate: #64748B;
+  
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --shadow-glow-cyan: 0 0 20px rgba(0, 242, 254, 0.4);
+  --shadow-glow-orange: 0 0 20px rgba(255, 107, 0, 0.4);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F19;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 242, 254, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 254, 0.4);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-takinbot-light);
+  color: var(--color-takinbot-dark);
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark body {
+  background-color: var(--color-takinbot-dark);
+  color: var(--color-takinbot-light);
+}
+
+/* Custom glow utilities */
+.glow-cyan-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-cyan-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+  border-color: #00F2FE !important;
+}
+
+.glow-orange-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glow-orange-hover:hover {
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
+  border-color: #FF6B00 !important;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .glass-card {
+  background: rgba(18, 24, 38, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Infinite horizontal marquee scrolling */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

@@ -42,12 +42,12 @@ export default function HomePage() {
   }
 
   // Cost calculator variables
-  const alibabaAnnualFee = 29800; // Standard member annual fee
-  const alibabaOperatingCost = 15000; // Keyword promotion / basic ads
-  const traditionalAgencyFee = 35000; // Traditional web dev + simple SEO
+  const alibabaAnnualFee = 29800; // Standard member annual fee (flat rate)
+  const alibabaOperatingCost = 15000 + Math.round(skuCount * 1.5); // Keyword promotion / basic ads scale with SKU catalog size
+  const traditionalAgencyFee = 35000 + Math.round(skuCount * 5.0); // Traditional dev agencies charge manual entry fees per SKU
   
-  const partnerSetupFee = 5000; // takinbot setup
-  const partnerMonthlyFee = 500; // takinbot maintenance/ops
+  const partnerSetupFee = 5000; // takinbot setup (flat rate due to AI/scripts automated upload)
+  const partnerMonthlyFee = 500; // takinbot maintenance/ops (flat rate)
   const partnerAnnualTotal = partnerSetupFee + (partnerMonthlyFee * 12); // ¥11,000 first year
 
   const traditionalTotal = alibabaAnnualFee + alibabaOperatingCost + traditionalAgencyFee;
@@ -475,7 +475,9 @@ export default function HomePage() {
                       ¥{traditionalTotal.toLocaleString()}
                     </h3>
                     <p className="text-[9px] text-slate-550 dark:text-slate-400 leading-relaxed">
-                      * {language === 'zh' ? '包含 ¥29,800 年费 + 基本竞价词推广 ¥15,000 + 基础建站服务 ¥35,000' : 'Includes standard member annual fees + basic PPC + dev agencies'}
+                      * {language === 'zh' 
+                        ? `包含 ¥29,800 年费 + 推广费 ¥${(15000 + Math.round(skuCount * 1.5)).toLocaleString()} + 录入建站费 ¥${(35000 + Math.round(skuCount * 5.0)).toLocaleString()} (按 SKU 数量加收人工录入/翻译费)` 
+                        : `Includes ¥29,800 member fee + PPC ¥${(15000 + Math.round(skuCount * 1.5)).toLocaleString()} + manual dev/input fee ¥${(35000 + Math.round(skuCount * 5.0)).toLocaleString()}`}
                     </p>
                   </div>
 

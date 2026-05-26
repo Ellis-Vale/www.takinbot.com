@@ -138,23 +138,23 @@ export const dictionary = {
     hero: {
       tagline: '技术合伙人 • 扎根车间 • 直连全球买家',
       titleFirst: '帮助中国工厂跳过外贸中间商，',
-      titleSecond: '打造你的专属海外事业部',
-      subtitle: '我是图南，一个睡过车间、写过代码、谈过海外客户的合伙人。我见过太多好工厂被外贸中介吃掉大半利润，也见过太多厂长花几万块做的网站只是个摆设。出海合伙人不一样——我扎进你的车间吃透产品，用大厂全栈技术和 AI 把你的好货直接推到海外买家面前。不画饼，先看案例。',
-      ctaWork: '了解服务与案例',
-      ctaContact: '直连图南',
-      badge: '出海合伙人 · 上海技术直达车间',
+      titleSecond: '打造您专属的“海外营销事业部”',
+      subtitle: '我是图南。我曾是互联网大厂的全栈架构师，写过高并发的系统代码。但我选择走出高档写字楼，直接睡进中国制造业产业带的车间厂房里，和工人们一起钻研机械模具与工艺参数。我不做赚模板暴利的“外包商”，我是与您同生共死的“出海技术合伙人”。我们自主研发 Next.js 极速独立站与 AI 内容工作流，把您复杂的 SKU 数字化，直接推送到海外大采购商的面前。用真诚和技术，把利润牢牢留在咱们工厂手里。',
+      ctaWork: '了解服务与试点案例',
+      ctaContact: '直连技术合伙人',
+      badge: '出海合伙人 · 大厂技术直达制造车间',
     },
     philosophy: {
-      title: '为什么选择”出海合伙人”？',
-      subtitle: '传统代运营靠人海战术赚服务费，建站公司靠一套模板收年费。出海合伙人不同——我们绑定在你的车间里，用技术和数据帮你把货卖出去。你接到第一个询盘，我们就证明了价值。',
-      col1Title: '按需定价，深度绑定',
-      col1Desc: '根据工厂规模和 SKU 数量灵活报价，不靠建站暴利赚钱。我们通过深度绑定工厂、沉淀产品数据，靠实际询价转化和长期增长实现共赢。',
+      title: '为什么选择“出海合伙人”模式？',
+      subtitle: '传统代运营靠人海战术赚服务费，建站公司靠一套模板收年费。出海合伙人不同——我们利益一致，绑定在您的车间里，用自研技术和数据帮你把货卖出去。您接到第一个真实询盘，我们就证明了价值。',
+      col1Title: '弹性定价，数据共盟',
+      col1Desc: '拒绝高昂 SaaS 平台强制年费与暴利加价。我们根据您的实际 SKU 数据规模灵活定价，把产品参数沉淀为高增值数字资产，通过长期共盟实现互利共赢。',
       col2Title: '大厂技术，全栈自研',
-      col2Desc: '独立站、询价系统、后端数据后台完全自研。没有第三方 SaaS 模板束缚，任何复杂的 OEM 定制需求或品类筛选，数小时内即可上线。',
+      col2Desc: '独立站、询价系统、后端数据后台完全自研。没有第三方模板束缚，任何复杂的车辆 OEM 对照、物料规格筛选等定制需求，数小时内即可上线。',
       col3Title: 'AI 极致效率提效 10 倍',
-      col3Desc: '自主部署 AI 工作流，高效生成多语言描述、社媒文案、短视频脚本并精准识别询价客户意图，1 人干出 10 人团队的活。',
-      col4Title: '国际化沟通与转化',
-      col4Desc: '图南本人直接与海外买家进行英语商务谈判与技术答疑，没有翻译中转、没有信息损耗，让海外客户感到专业和可信，询价转化率远超传统外贸团队。',
+      col3Desc: '自主部署 AI 语料生产线，秒级生成多语言产品描述、海外社媒文案、短视频脚本并精准识别采购商大货意图，实现 1 人干出 10 人团队的效能。',
+      col4Title: '国际化无损沟通',
+      col4Desc: '图南本人直接与海外买家进行英语商务谈判与技术细节答疑。没有非专业业务员的翻译中转与信息损耗，用专业度建立买家的高感信任，锁死询盘订单。',
     },
     divisions: {
       title: '三大出海武器与试点案例',
@@ -256,12 +256,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const t = dictionary[language];
+  const t = dictionary[language] as any as typeof dictionary['en'];
 
   if (!mounted) {
     // Provide a stable initial dictionary structure to prevent server/client mismatched values
     return (
-      <LanguageContext.Provider value={{ language, setLanguage, t: dictionary['zh'] }}>
+      <LanguageContext.Provider value={{ language, setLanguage, t: dictionary['zh'] as any as typeof dictionary['en'] }}>
         {children}
       </LanguageContext.Provider>
     );

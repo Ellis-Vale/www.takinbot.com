@@ -43,7 +43,7 @@ export default function BusinessPage() {
       ctaLink: 'https://filtration.takinbot.com',
       isExternal: true,
       icon: <Laptop className="w-6 h-6 text-takinbot-orange" />,
-      pricing: language === 'zh' ? '一次性 ¥5,000 建站费' : '¥5,000 One-Time Setup',
+      pricing: language === 'zh' ? '按 SKU 规模灵活报价' : 'Flexible SKU-Based Pricing',
       features: [
         language === 'zh' ? '基于 Next.js + Cloudflare 全栈自研极速框架' : 'Ultra-fast Next.js + Cloudflare Edge structure',
         language === 'zh' ? '无限容量产品 SKU 规格交叉匹配数据库' : 'Unlimited B2B cross-reference SKU catalogs',
@@ -61,7 +61,7 @@ export default function BusinessPage() {
       ctaLink: '/contact',
       isExternal: false,
       icon: <Globe className="w-6 h-6 text-takinbot-cyan" />,
-      pricing: language === 'zh' ? '仅需 ¥500/月 极致维护托管' : '¥500/mo Maintenance Ops',
+      pricing: language === 'zh' ? '低月费持续运营，按平台数灵活定价' : 'Low Monthly Retainer, Flexible by Platform',
       features: [
         language === 'zh' ? 'YouTube, LinkedIn, Facebook, Ins 主页搭建' : 'YouTube, LinkedIn, Facebook setups',
         language === 'zh' ? 'AI 极致赋能，每日生成地道地道外贸英文文案' : 'AI-driven daily high-quality B2B English copy',
@@ -79,7 +79,7 @@ export default function BusinessPage() {
       ctaLink: '/contact',
       isExternal: false,
       icon: <Cpu className="w-6 h-6 text-takinbot-orange" />,
-      pricing: language === 'zh' ? '定期物料策划策划（含在 ¥500/月内）' : 'Included in ¥500/mo Operations',
+      pricing: language === 'zh' ? '定期内容策划，含在月度服务内' : 'Included in Monthly Operations',
       features: [
         language === 'zh' ? '深入车间策划：诚实展示精密模具与产线' : 'Hands-on workshop scripting and setups',
         language === 'zh' ? '大厂级专业后期：高端电影级工业调色质感' : 'Premium industrial color grading and cuts',

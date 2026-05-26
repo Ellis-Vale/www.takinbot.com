@@ -127,7 +127,7 @@ export default function ContactPage() {
                         value={company}
                         onChange={(e) => setCompany(e.target.value)}
                         className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl px-4 py-3 text-xs outline-none focus:border-takinbot-orange dark:focus:border-takinbot-orange transition-colors dark:text-white text-slate-800"
-                        placeholder={language === 'zh' ? '例如：河北清河某某滤清器制造厂' : 'e.g. Qinghe Auto Parts Factory'}
+                        placeholder={language === 'zh' ? '例如：某某汽车零部件制造厂' : 'e.g. Auto Parts Manufacturing Co.'}
                       />
                     </div>
                     <div className="space-y-2">

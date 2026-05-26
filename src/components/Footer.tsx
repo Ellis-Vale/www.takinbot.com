@@ -37,7 +37,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-1.5 pt-1">
             <span className="text-[9px] font-bold px-2 py-0.5 bg-slate-200/50 dark:bg-white/5 border border-slate-300/60 dark:border-white/10 rounded text-slate-600 dark:text-slate-350">{language === 'en' ? 'Big-Tech Full-Stack' : '大厂全栈技术'}</span>
             <span className="text-[9px] font-bold px-2 py-0.5 bg-slate-200/50 dark:bg-white/5 border border-slate-300/60 dark:border-white/10 rounded text-slate-600 dark:text-slate-350">{language === 'en' ? 'AI-Driven 10x Ops' : 'AI 极致提效'}</span>
-            <span className="text-[9px] font-bold px-2 py-0.5 bg-slate-200/50 dark:bg-white/5 border border-slate-300/60 dark:border-white/10 rounded text-slate-600 dark:text-slate-350">{language === 'en' ? 'Qinghe Filter Case' : '清河滤清器案例'}</span>
+            <span className="text-[9px] font-bold px-2 py-0.5 bg-slate-200/50 dark:bg-white/5 border border-slate-300/60 dark:border-white/10 rounded text-slate-600 dark:text-slate-350">{language === 'en' ? '6,000+ SKU Pilot Live' : '6000+ SKU 出海案例'}</span>
             <span className="text-[9px] font-bold px-2 py-0.5 bg-slate-200/50 dark:bg-white/5 border border-slate-300/60 dark:border-white/10 rounded text-slate-600 dark:text-slate-350">{language === 'en' ? 'Outbound Partner' : '出海合伙人计划'}</span>
           </div>
         </div>

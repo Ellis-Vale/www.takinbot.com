@@ -4,18 +4,11 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
-import { 
-  ShieldCheck, 
-  Settings, 
-  Terminal, 
-  Cpu, 
+import {
+  ShieldCheck,
+  Cpu,
   ArrowRight,
-  Sparkles,
-  Zap,
   Globe,
-  LineChart,
-  MessageSquare,
-  Award,
   Laptop,
   CheckCircle2,
   HelpCircle,
@@ -83,8 +76,8 @@ export default function HomePage() {
 
   const faqsList = language === 'zh' ? [
     {
-      q: '为什么只收 ¥5000 建站费和 ¥500/月？别的公司都是收几万？',
-      a: '因为图南是一个有大厂全栈背景的独立合伙人，没有销售团队的佣金提成，没有写字楼高昂的租金公摊，且所有系统底层、自动化运营脚本和 AI 工作流均为全栈自研。极低的边际成本让我们能以 ¥5000 开荒、¥500 月度维护的“纯工本价”合作。我们不靠建站暴利赚钱，真正的共赢在于深入车间绑定工厂、积累 SKU 数据库，未来通过大货询价抽佣或联合打造自主品牌变现。'
+      q: '你们的收费为什么比传统建站公司和代运营低这么多？',
+      a: '因为图南是独立技术合伙人，没有销售团队佣金、没有写字楼租金公摊、所有系统和 AI 工作流均为全栈自研。极低的边际成本让我们能按 SKU 规模灵活报价，而不是一口价吃定工厂。我们也不靠建站暴利赚钱——真正的共赢在于深入车间绑定工厂、积累 SKU 数据库，未来通过大货询价抽佣或联合打造自主品牌变现。'
     },
     {
       q: '自研独立站和外面普通的 SaaS（如 Shopify/Shopline）有什么区别？',
@@ -92,16 +85,16 @@ export default function HomePage() {
     },
     {
       q: '海外社媒和视频运营具体包括哪些？我需要提供什么？',
-      a: '社媒运营并非枯燥地发广告，而是将工厂最硬核、最诚实的“制作者故事”讲给海外买家。我们会协助您搭建并精细维护 YouTube、LinkedIn、Facebook 和 Instagram 主页。我们会使用 AI 工作流快速编写流利的外贸英文脚本，您只需要配合拍摄或提供几段手机录制的车间产线、开模浇注、质检测试的毛片，我们即可在上海制作出极具工业感和科技度的高级短视频进行分发，精准拦截海外大贸易商。'
+      a: '社媒运营并非枯燥地发广告，而是将工厂最硬核、最诚实的"制作者故事"讲给海外买家。我们会协助您搭建并精细维护 YouTube、LinkedIn、Facebook 和 Instagram 主页。我们会使用 AI 工作流快速编写流利的外贸英文脚本，您只需要配合拍摄或提供几段手机录制的车间产线、开模浇注、质检测试的毛片，我们即可在上海制作出极具工业感和科技度的高级短视频进行分发，精准拦截海外大贸易商。'
     },
     {
-      q: '我是清河滤清器厂（或其他行业的厂长），我们没有专职外贸员怎么办？',
-      a: '这正是“出海合伙人”的核心价值。图南具备无缝的英语商务谈判与工程答疑能力。当海外买家通过我们的自研独立站或社媒发送大宗采购询盘时，信息不会因为中转翻译而损耗。我们会直接介入进行英文答疑、核算 FOB 价格，并理顺上海港海运通关，相当于用 ¥500/月的成本，直接给您配备了一个身在上海、大厂技术背景的海外营销事业部。'
+      q: '我是工厂厂长，没有专职外贸团队怎么办？',
+      a: '这正是"出海合伙人"的核心价值。图南具备无缝的英语商务谈判与工程答疑能力。当海外买家通过我们的自研独立站或社媒发送大宗采购询盘时，信息不会因为中转翻译而损耗。我们会直接介入进行英文答疑、核算 FOB 价格，并理顺上海港海运通关，相当于用远低于一个外贸业务员的成本，直接给您配备了一个身在上海、大厂技术背景的海外营销事业部。'
     }
   ] : [
     {
-      q: 'Why only ¥5,000 setup fee and ¥500/month? Traditional agencies charge ten times more.',
-      a: 'Because Tunan operates as an independent partner with former big-tech full-stack architect capabilities. There are no sales commissions, no expensive office overhead, and all translation, data collection, and page generation scripts are automated and self-developed. We do not look for short-term quick wins from template sites; we bind with your workshop to consolidate product SKUs, securing long-term profits through commission sharing and brand value growth.'
+      q: 'Why are your fees so much lower than traditional agencies and SaaS platforms?',
+      a: 'Because Tunan operates as an independent partner with former big-tech full-stack architect capabilities. There are no sales commissions, no expensive office overhead, and all translation, data collection, and page generation scripts are automated and self-developed. We price flexibly based on your SKU scale — not a rigid template fee. We don\'t look for short-term quick wins; we bind with your workshop to consolidate product SKUs, securing long-term profits through commission sharing and brand value growth.'
     },
     {
       q: 'What is the difference between your self-developed B2B site and SaaS templates (like Shopify)?',
@@ -122,9 +115,9 @@ export default function HomePage() {
       
       {/* 1. TOP ANNOUNCEMENT BAR */}
       <div className="bg-takinbot-dark dark:bg-takinbot-dark-soft text-slate-300 text-center text-[10px] sm:text-[11px] py-2.5 px-4 border-b border-white/5 tracking-wider font-semibold">
-        💡 <span className="text-takinbot-orange font-bold">{language === 'zh' ? '出海试点捷报：' : 'OUTBOUND PILOT REPORT:'}</span> {language === 'zh' 
-          ? '清河滤清器试点案例站 (filtration.takinbot.com) 已上线，6,000+ SKU 跨境独立站及 FOB 询价闭环测试成功，直接拦截一手采购商。' 
-          : 'Qinghe auto filter showcase (filtration.takinbot.com) goes live, integrating 6,000+ SKU cross-references & FOB inquiries with great success.'}
+        💡 <span className="text-takinbot-orange font-bold">{language === 'zh' ? '出海试点捷报：' : 'OUTBOUND PILOT REPORT:'}</span> {language === 'zh'
+          ? '汽车滤清器出海案例站 (filtration.takinbot.com) 已上线，6,000+ SKU 跨境独立站及 FOB 询价闭环测试成功，直接拦截一手海外采购商。'
+          : 'Auto filter export showcase (filtration.takinbot.com) goes live, integrating 6,000+ SKU cross-references & FOB inquiries with great success.'}
       </div>
 
       {/* 2. Premium Maker Hero Section */}
@@ -171,23 +164,23 @@ export default function HomePage() {
               </Link>
             </div>
             
-            {/* Quick SOHO stats row */}
+            {/* Capability metrics row */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-slate-200 dark:border-white/5 font-heading">
               <div>
-                <div className="text-2xl font-extrabold text-takinbot-orange">¥5,000</div>
-                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? '一次性建站费用' : 'One-Time Setup Fee'}</div>
+                <div className="text-2xl font-extrabold text-takinbot-orange">6,000+</div>
+                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? 'SKU 已数字化管理' : 'SKUs Digitized'}</div>
               </div>
               <div>
-                <div className="text-2xl font-extrabold text-takinbot-orange">¥500/月</div>
-                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? '极致代运营维护' : 'Monthly Maintenance'}</div>
+                <div className="text-2xl font-extrabold text-takinbot-orange">4 大平台</div>
+                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? '海外社媒覆盖' : 'Global Social Platforms'}</div>
               </div>
               <div>
-                <div className="text-2xl font-extrabold text-takinbot-orange">10x Speed</div>
-                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? 'AI 赋能内容运营' : 'AI-Powered Content'}</div>
+                <div className="text-2xl font-extrabold text-takinbot-orange">10x</div>
+                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? 'AI 内容提效' : 'AI-Powered Speed'}</div>
               </div>
               <div>
                 <div className="text-2xl font-extrabold text-takinbot-orange">100% 自研</div>
-                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? '拒绝模板/光速定制' : 'Full-Stack Custom'}</div>
+                <div className="text-[10px] text-slate-500 uppercase font-bold tracking-wider mt-1">{language === 'zh' ? '零平台年费捆绑' : 'Zero Platform Lock-in'}</div>
               </div>
             </div>
           </motion.div>
@@ -210,33 +203,54 @@ export default function HomePage() {
                   <span className="w-2.5 h-2.5 rounded-full bg-takinbot-orange animate-pulse shadow-[0_0_10px_#FF6B00]" />
                 </div>
 
-                {/* System Terminal overlay */}
+                {/* Visual Dashboard — website & social media previews */}
                 <div className="my-6 relative rounded-xl overflow-hidden bg-slate-950 border border-slate-800 flex-grow flex flex-col justify-between p-5 text-left font-body">
-                  <div className="space-y-4">
+                  <div className="space-y-3">
                     <div className="flex items-center gap-2 text-slate-400">
-                      <Sparkles className="w-4 h-4 text-takinbot-cyan" />
-                      <span className="text-[10px] font-bold uppercase tracking-wider font-heading">{language === 'zh' ? '全栈 AI 引擎工作流已就绪' : 'All-Stack AI Pipeline Ready'}</span>
+                      <Globe className="w-4 h-4 text-takinbot-cyan" />
+                      <span className="text-[10px] font-bold uppercase tracking-wider font-heading">{language === 'zh' ? '独立站 + 社媒矩阵 实时在线' : 'Site + Social Network Live'}</span>
                     </div>
-                    <div className="space-y-2">
-                      <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden relative">
-                        <div className="absolute top-0 left-0 h-full w-5/6 bg-gradient-to-r from-takinbot-cyan to-takinbot-orange rounded-full animate-pulse" />
+
+                    {/* Website preview card */}
+                    <div className="rounded-lg overflow-hidden border border-white/10 bg-slate-800 shadow-lg">
+                      <div className="h-2.5 bg-slate-700 flex gap-1.5 items-center px-2.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-yellow-400" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                        <span className="text-[7px] text-slate-500 ml-2">filtration.takinbot.com</span>
                       </div>
-                      <p className="text-[10px] text-slate-400 leading-relaxed font-body">
-                        {language === 'zh' 
-                          ? '清河滤清器案例站部署已同步 Cloudflare 节点。6000+ 滤清器规格对照表及 AI 翻译引擎运行平稳。'
-                          : 'Qinghe auto filter case deployed to Cloudflare Global Edges. 6,000+ SKU cross-references live.'}
-                      </p>
+                      <div className="p-3 space-y-2.5">
+                        <div className="h-2 w-2/3 bg-gradient-to-r from-slate-600 to-slate-500 rounded" />
+                        <div className="grid grid-cols-3 gap-1.5">
+                          <div className="h-8 bg-gradient-to-br from-slate-700 to-slate-800 rounded flex items-center justify-center text-[7px] text-slate-400 border border-white/5">{language === 'zh' ? '产品展示' : 'Products'}</div>
+                          <div className="h-8 bg-gradient-to-br from-slate-700 to-slate-800 rounded flex items-center justify-center text-[7px] text-slate-400 border border-white/5">{language === 'zh' ? 'OEM 查询' : 'OEM Lookup'}</div>
+                          <div className="h-8 bg-gradient-to-br from-slate-700 to-slate-800 rounded flex items-center justify-center text-[7px] text-slate-400 border border-white/5">{language === 'zh' ? '在线询价' : 'RFQ'}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Social media presence bar */}
+                    <div className="flex items-center justify-between px-1">
+                      <span className="text-[8px] text-slate-500 font-bold uppercase tracking-wider">{language === 'zh' ? '海外社媒矩阵' : 'Social Matrix'}</span>
+                      <div className="flex gap-2.5">
+                        <span className="text-[9px] text-[#0A66C2] font-extrabold">in</span>
+                        <span className="text-[9px] text-red-500 font-extrabold">▶</span>
+                        <span className="text-[9px] text-[#1877F2] font-extrabold">fb</span>
+                        <span className="text-[9px] text-pink-400 font-extrabold">ig</span>
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Mock live terminal output */}
-                  <div className="bg-black/50 border border-white/5 rounded-lg p-3 text-[9px] font-mono text-emerald-400 space-y-1">
-                    <p className="text-slate-500">&gt; takinbot --outbound-status</p>
-                    <p>✔ pilot_case: filtration.takinbot.com</p>
-                    <p>✔ skus_mapped: 6,184 verified codes</p>
-                    <p>✔ custom_oem_form: active_online</p>
-                    <p>✔ ai_translation_speed: 120 SKUs/min</p>
-                    <p>✔ global_cdn_speed: 18ms (Shanghai &rarr; Global)</p>
+
+                  {/* Bottom stats cards */}
+                  <div className="grid grid-cols-2 gap-2 mt-3">
+                    <div className="bg-black/50 border border-white/5 rounded-lg p-2.5 text-center">
+                      <div className="text-lg font-extrabold text-takinbot-orange font-heading">6,184</div>
+                      <div className="text-[7px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">{language === 'zh' ? 'SKU 已上线' : 'SKUs Live'}</div>
+                    </div>
+                    <div className="bg-black/50 border border-white/5 rounded-lg p-2.5 text-center">
+                      <div className="text-lg font-extrabold text-takinbot-cyan font-heading">&lt;18ms</div>
+                      <div className="text-[7px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">{language === 'zh' ? '全球打开速度' : 'Global CDN'}</div>
+                    </div>
                   </div>
                 </div>
 
@@ -284,6 +298,26 @@ export default function HomePage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3.5 Exclusivity Commitment Banner */}
+      <section className="max-w-7xl mx-auto px-6 -mt-10 mb-10">
+        <div className="bg-gradient-to-r from-takinbot-orange/10 via-takinbot-cyan/10 to-takinbot-orange/10 border border-takinbot-orange/20 rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_var(--tw-gradient-stops))] from-takinbot-orange/10 via-transparent to-transparent pointer-events-none" />
+          <div className="relative z-10 space-y-3">
+            <span className="inline-block px-3 py-1 text-[10px] font-extrabold tracking-widest text-takinbot-orange bg-takinbot-orange/10 border border-takinbot-orange/30 rounded-full uppercase">
+              {language === 'zh' ? '品类独家合作承诺' : 'Category Exclusivity Commitment'}
+            </span>
+            <h3 className="font-heading text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+              {language === 'zh' ? '每个细分品类，仅深度服务一家工厂' : 'One Factory Per Product Category. Period.'}
+            </h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-body">
+              {language === 'zh'
+                ? '我们不会一边帮你做滤清器出海，一边服务你的隔壁竞争对手。品类独家意味着：我们的技术投入、客户资源、社媒流量全部倾注在你一家身上。你的成功就是我们的成功，没有利益冲突，只有利益共同体。'
+                : 'We will never serve your direct competitor in the same category. Category exclusivity means every line of code, every social media post, every buyer relationship is dedicated to your factory alone. Your success is our only success — zero conflicts, one shared mission.'}
+            </p>
           </div>
         </div>
       </section>
@@ -359,9 +393,9 @@ export default function HomePage() {
                 {t.divisions.d4Title}
               </h2>
               <p className="text-sm text-slate-650 dark:text-slate-400 leading-relaxed font-body">
-                {language === 'zh' 
-                  ? '这是我们针对“河北清河汽车滤清器产业集群”工厂开发的出海演示站。传统的代运营只会用 WordPress 随意套个卡顿的模板，无法整理庞杂的产品参数。我们深耕滤清器制造多年，利用大厂全栈自研框架，将 6,000+ 车载空气滤、空调滤、机油滤的 OEM/交叉对照码整理成高响应性数据库。海外买家能够瞬间搜索、精准锁定，并配合 100% 诚实的一手 FOB 上海港清关询价系统直接下单。'
-                  : 'Our custom-coded showcase built for Hebei Qinghe automotive filter manufacturers. We restructured over 6,000 product models and OEM numbers into a lightning-fast catalog. Direct global distributors can search cross-reference database instantly and initiate direct FOB quotes with absolute transparent cost structures.'}
+                {language === 'zh'
+                  ? '这是我们针对汽车滤清器产业集群工厂开发的出海演示站。传统代运营只会用 WordPress 随便套个卡顿的模板，无法整理庞杂的产品参数。我们深耕滤清器品类，利用大厂全栈自研框架，将 6,000+ 车载空气滤、空调滤、机油滤的 OEM/交叉对照码整理成高响应性数据库。海外买家能够瞬间搜索、精准锁定，并配合 100% 诚实的一手 FOB 上海港清关询价系统直接下单。'
+                  : 'Our custom-coded showcase built for automotive filter manufacturers. We restructured over 6,000 product models and OEM numbers into a lightning-fast catalog. Direct global distributors can search the cross-reference database instantly and initiate direct FOB quotes with absolute transparent cost structures.'}
               </p>
               
               {/* Highlight bullet points */}
@@ -407,7 +441,7 @@ export default function HomePage() {
             </h2>
             <p className="text-sm text-slate-500 font-body">
               {language === 'zh' 
-                ? '我们拖动滑块选择您工厂需要出海的 SKU 数量，直观对比“拓新搏图出海合伙人”与传统大宗外贸代运营或阿里巴巴会员的成本。'
+                ? '我们拖动滑块选择您工厂需要出海的 SKU 数量，直观对比"拓新搏图出海合伙人"与传统大宗外贸代运营或阿里巴巴会员的成本。'
                 : 'Slide to adjust your active product SKU count and inspect the cost comparison between our Outbound Partner model and traditional platforms.'}
             </p>
           </div>
@@ -451,11 +485,11 @@ export default function HomePage() {
                 </div>
                 
                 <div className="p-4 bg-emerald-500/5 border border-emerald-500/10 rounded-xl space-y-2">
-                  <span className="text-[10px] font-extrabold text-emerald-500 tracking-wider font-heading uppercase">{language === 'zh' ? '拓新搏图“出海合伙人”的颠覆优势' : 'TAKINBOT PARTNER ADVANTAGE'}</span>
+                  <span className="text-[10px] font-extrabold text-emerald-500 tracking-wider font-heading uppercase">{language === 'zh' ? '拓新搏图"出海合伙人"的颠覆优势' : 'TAKINBOT PARTNER ADVANTAGE'}</span>
                   <p className="text-slate-550 dark:text-slate-400 leading-relaxed">
                     {language === 'zh'
-                      ? '首次 ¥5,000 一次性建站（全栈自研自产，终生无年费），月度维护仅 ¥500。配备大厂全栈开发，AI 高效翻译代写提效 10 倍，图南本人流利英语代谈海外客盘。'
-                      : '¥5,000 one-time setup and ¥500/mo operations. No SaaS locked platform. 10x faster execution due to custom AI workflows, bilingual developer directly negotiating B2B contracts.'}
+                      ? '按 SKU 规模灵活报价，全栈自研独立站终生无平台年费，月度维护成本远低于传统代运营。配备大厂全栈开发，AI 高效翻译代写提效 10 倍，图南本人流利英语代谈海外客盘。'
+                      : 'Flexible pricing based on SKU scale. Self-developed portal with zero platform annual fees, monthly ops far below traditional agency costs. 10x faster execution via custom AI workflows, bilingual engineer directly negotiating B2B contracts.'}
                   </p>
                 </div>
               </div>
@@ -513,9 +547,9 @@ export default function HomePage() {
                 </div>
 
                 <p className="text-[10px] text-slate-500 text-left mt-6 leading-relaxed font-body">
-                  * {language === 'zh' 
-                    ? '计算基于常规外贸工厂运营行情。图南提供的是“纯自研开发与合伙服务”，我们不赚取高昂建站差价，旨在成为您深度绑定的海外事业部。'
-                    : 'Calculations are based on industry standards. Tunan serves as a dedicated strategic partner, prioritizing factory volume and commissions over markup.'}
+                  * {language === 'zh'
+                    ? '计算基于常规外贸工厂运营行情。图南提供"纯自研开发与合伙服务"，按 SKU 规模灵活报价，不赚取高昂建站差价，旨在成为您深度绑定的海外事业部。'
+                    : 'Calculations based on industry standards. Tunan provides self-developed partner services with flexible SKU-based pricing — prioritizing long-term factory growth over short-term markups.'}
                 </p>
               </div>
             </div>
@@ -674,7 +708,7 @@ export default function HomePage() {
             {language === 'zh' ? '开启联合出海' : 'Get Started'}
           </span>
           <h2 className="font-heading text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15]">
-            {language === 'zh' ? '把您工厂的专属“海外推广部”建起来。' : 'Direct Full-Stack Partnership. Scale Globally.'}
+            {language === 'zh' ? '把您工厂的专属"海外推广部"建起来。' : 'Direct Full-Stack Partnership. Scale Globally.'}
           </h2>
           <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-body">
             {language === 'zh' 

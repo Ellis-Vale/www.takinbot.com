@@ -21,10 +21,37 @@ export default function HomePage() {
   const [mounted, setMounted] = useState(false);
   const [skuCount, setSkuCount] = useState(1000);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      img: '/img/filter_oil.png',
+      title: language === 'zh' ? '1. 独立站数字化展厅' : '1. Digital Product Catalog',
+      desc: language === 'zh' ? '6,000+ SKU 车辆数据交叉检索，海外买家秒级定位产品并触发询盘' : '6,000+ SKU cross-references, live search catalog',
+    },
+    {
+      img: '/img/robotic_assembly_floor.png',
+      title: language === 'zh' ? '2. 精密工业视频与社媒拦截' : '2. Industrial Video & Social Media',
+      desc: language === 'zh' ? '电影级车间生产线镜头代运营，在海外买家心中建立大厂信誉，主动拦截采购商' : 'Cinematic factory footage capturing global buyer trust',
+    },
+    {
+      img: '/img/factory_warehouse.png',
+      title: language === 'zh' ? '3. 专属“海外营销事业部”' : '3. Dedicated Export Department',
+      desc: language === 'zh' ? '图南流利英语直接谈判大宗订单与技术参数，上海港清关发运全球直发' : 'Direct B2B negotiation and Shanghai port custom clearings',
+    }
+  ];
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [mounted]);
 
   if (!mounted) {
     return (
@@ -215,36 +242,55 @@ export default function HomePage() {
                 {/* Dashboard Previews */}
                 <div className="my-5 space-y-4 flex-grow flex flex-col justify-between text-left font-body">
                   
-                  {/* Part 1: Apple-style Showcase Demo Website Card */}
-                  <div className="rounded-2xl border border-slate-200 dark:border-white/15 bg-white/50 dark:bg-slate-950/70 p-3.5 space-y-2.5 relative overflow-hidden shadow-inner group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-takinbot-cyan/5 to-transparent pointer-events-none" />
-                    <div className="flex items-center justify-between text-[9px] text-slate-500 font-bold uppercase">
-                      <span className="flex items-center gap-1.5"><Laptop className="w-3.5 h-3.5 text-takinbot-cyan" /> {language === 'zh' ? '独立站数字化展厅' : 'Digital Showroom'}</span>
-                      <span className="text-[8px] font-mono text-slate-450">filtration.takinbot.com</span>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-2.5 w-2/3 bg-slate-200 dark:bg-slate-700 rounded-full" />
-                      <div className="grid grid-cols-3 gap-1.5">
-                        <div className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-2 rounded-lg text-[9px] font-bold text-center text-slate-650 dark:text-slate-400">{language === 'zh' ? '6,000+ SKU' : '6k+ SKUs'}</div>
-                        <div className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-2 rounded-lg text-[9px] font-bold text-center text-slate-650 dark:text-slate-400">{language === 'zh' ? 'OEM 检索' : 'OEM Search'}</div>
-                        <div className="bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-2 rounded-lg text-[9px] font-bold text-center text-slate-650 dark:text-slate-400">{language === 'zh' ? 'FOB 离岸询价' : 'FOB Quote'}</div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Premium Framer Motion Image Carousel (用图说话代替纯文字) */}
+                  <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 aspect-[16/10] shadow-inner group">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentSlide}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="absolute inset-0"
+                      >
+                        {/* Slide Image */}
+                        <img 
+                          src={slides[currentSlide].img} 
+                          alt={slides[currentSlide].title}
+                          className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+                        />
+                        {/* Gradient Cover Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                        
+                        {/* Float Label */}
+                        <span className="absolute top-3 left-3 px-2 py-0.5 rounded text-[8.5px] font-extrabold font-heading bg-takinbot-orange text-white uppercase tracking-wider shadow">
+                          {language === 'zh' ? '出海实景演示' : 'OUTBOUND WORKFLOW'}
+                        </span>
+                        
+                        {/* Text Caption Overlay */}
+                        <div className="absolute bottom-3 left-3.5 right-3.5 text-left space-y-1 z-10">
+                          <h4 className="font-heading text-[11px] font-black text-white tracking-wide uppercase">
+                            {slides[currentSlide].title}
+                          </h4>
+                          <p className="text-[9px] text-slate-300 leading-relaxed font-body font-semibold">
+                            {slides[currentSlide].desc}
+                          </p>
+                        </div>
+                      </motion.div>
+                    </AnimatePresence>
 
-                  {/* Part 2: Outbound Sales Intercept Funnel (LinkedIn & YouTube Matrix) */}
-                  <div className="rounded-2xl border border-slate-200 dark:border-white/15 bg-white/50 dark:bg-slate-950/70 p-3.5 space-y-2.5 relative overflow-hidden shadow-inner">
-                    <div className="absolute inset-0 bg-gradient-to-br from-takinbot-orange/5 to-transparent pointer-events-none" />
-                    <div className="flex items-center justify-between text-[9px] text-slate-500 font-bold uppercase">
-                      <span className="flex items-center gap-1.5"><Globe className="w-3.5 h-3.5 text-takinbot-orange" /> {language === 'zh' ? '海外询盘精准拦截' : 'Leads Acquisition'}</span>
-                      <span className="text-[8px] font-mono text-emerald-500 animate-pulse font-bold">{language === 'zh' ? '拦截率 +300%' : 'Conversion Up'}</span>
-                    </div>
-                    <div className="space-y-2 text-[10px] text-slate-600 dark:text-slate-400 leading-normal">
-                      <div className="flex items-center justify-between bg-slate-100 dark:bg-slate-900 px-3 py-2 rounded-lg border border-slate-200 dark:border-white/5 font-mono text-[9px]">
-                        <span className="text-takinbot-cyan font-bold">&gt; client_inquiry: received</span>
-                        <span className="text-slate-500">Hamburg, Germany</span>
-                      </div>
-                      <p className="px-1 text-[9px]">{language === 'zh' ? '直接与德国、美国大宗采购经理对接技术细节，流利英语无损沟通。' : 'Direct tech dialogue with German/US procurement directors, zero language barriers.'}</p>
+                    {/* Navigation Dots Indicator */}
+                    <div className="absolute bottom-3 right-4 flex gap-1.5 z-20">
+                      {slides.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentSlide(idx)}
+                          className={`w-1.5 h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                            currentSlide === idx ? 'bg-takinbot-orange w-3.5' : 'bg-white/40 hover:bg-white/70'
+                          }`}
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
                     </div>
                   </div>
 

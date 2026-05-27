@@ -25,19 +25,24 @@ export default function HomePage() {
 
   const slides = [
     {
-      img: '/img/filter_oil.png',
+      img: '/img/oem_catalog_app_mockup.png',
       title: language === 'zh' ? '1. 独立站数字化展厅' : '1. Digital Product Catalog',
       desc: language === 'zh' ? '6,000+ SKU 车辆数据交叉检索，海外买家秒级定位产品并触发询盘' : '6,000+ SKU cross-references, live search catalog',
     },
     {
-      img: '/img/robotic_assembly_floor.png',
-      title: language === 'zh' ? '2. 精密工业视频与社媒拦截' : '2. Industrial Video & Social Media',
-      desc: language === 'zh' ? '电影级车间生产线镜头代运营，在海外买家心中建立大厂信誉，主动拦截采购商' : 'Cinematic factory footage capturing global buyer trust',
+      img: '/img/consumerlens_market_radar.png',
+      title: language === 'zh' ? '2. ConsumerLens 趋势罗盘与社媒拦截' : '2. ConsumerLens Trends & Active Intercept',
+      desc: language === 'zh' ? '海关进出口大数据热力图与Amazon痛点分析，以硬核数据主动拦截精准采购商' : 'Customs big data & Amazon pain points analysis to intercept global buyers',
     },
     {
-      img: '/img/factory_warehouse.png',
-      title: language === 'zh' ? '3. 专属“海外营销事业部”' : '3. Dedicated Export Department',
-      desc: language === 'zh' ? '图南流利英语直接谈判大宗订单与技术参数，上海港清关发运全球直发' : 'Direct B2B negotiation and Shanghai port custom clearings',
+      img: '/img/director_client_workshop.png',
+      title: language === 'zh' ? '3. 专属“海外营销事业部”与实地谈判' : '3. Dedicated Export & Workshop Negotiation',
+      desc: language === 'zh' ? '图南流利双语直接谈判大宗订单，大买家实地验厂，上海港清关发运全球' : 'Direct bilingual negotiation, global buyer audits, and Waigaoqiao FTZ clearings',
+    },
+    {
+      img: '/img/tunan_app_product_listing_ui.png',
+      title: language === 'zh' ? '4. AI 产品运营自动化（手机端一键上架）' : '4. AI Product Operations Automation',
+      desc: language === 'zh' ? '厂长拍照说几句话，AI 自动生成多语言产品详情与FOB报价，一键推送到官网上线' : 'Take a photo, say a few words, and AI lists the product onto the global portal instantly',
     }
   ];
 

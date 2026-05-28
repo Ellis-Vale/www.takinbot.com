@@ -47,7 +47,7 @@ export default function StoryPage() {
           {[
             { 
               icon: <User className="w-5 h-5 text-takinbot-orange" />, 
-              title: language === 'zh' ? '图南 (Tunan)' : 'Tunan (Founder)', 
+              title: language === 'zh' ? '大龙 (Dalong)' : 'Dalong (Founder)', 
               desc: language === 'zh' ? '独立产品设计师、前大厂全栈架构师兼出海合伙人。' : 'Founder, full-stack engineer and outbound strategist.'
             },
             { 
@@ -122,8 +122,8 @@ export default function StoryPage() {
             </h4>
             <p className="text-[11px] text-slate-500 font-body leading-relaxed">
               {language === 'zh'
-                ? '不收取高额年费，拒绝死板模板套用。与图南直连，我们将在 24 小时内为您工厂的核心产品目录进行出海可行性与技术方案核算。'
-                : 'Skip traditional middlemen delays. Talk directly to Tunan and receive a complete preliminary B2B search catalog review in 24 hours.'}
+                ? '不收取高额年费，拒绝死板模板套用。与大龙直连，我们将在 24 小时内为您工厂的核心产品目录进行出海可行性与技术方案核算。'
+                : 'Skip traditional middlemen delays. Talk directly to Dalong and receive a complete preliminary B2B search catalog review in 24 hours.'}
             </p>
           </div>
           <a 

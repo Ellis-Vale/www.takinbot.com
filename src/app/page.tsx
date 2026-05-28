@@ -37,10 +37,10 @@ export default function HomePage() {
     {
       img: '/img/director_client_workshop.png',
       title: language === 'zh' ? '3. 专属“海外营销事业部”与实地谈判' : '3. Dedicated Export & Workshop Negotiation',
-      desc: language === 'zh' ? '图南流利双语直接谈判大宗订单，大买家实地验厂，上海港清关发运全球' : 'Direct bilingual negotiation, global buyer audits, and Waigaoqiao FTZ clearings',
+      desc: language === 'zh' ? '大龙流利双语直接谈判大宗订单，大买家实地验厂，上海港清关发运全球' : 'Direct bilingual negotiation, global buyer audits, and Waigaoqiao FTZ clearings',
     },
     {
-      img: '/img/tunan_app_product_listing_ui.png',
+      img: '/img/dalong_app_product_listing_ui.png',
       title: language === 'zh' ? '4. AI 产品运营自动化（手机端一键上架）' : '4. AI Product Operations Automation',
       desc: language === 'zh' ? '厂长拍照说几句话，AI 自动生成多语言产品详情与FOB报价，一键推送到官网上线' : 'Take a photo, say a few words, and AI lists the product onto the global portal instantly',
     }
@@ -110,7 +110,7 @@ export default function HomePage() {
   const faqsList = language === 'zh' ? [
     {
       q: '你们的收费为什么比传统建站公司和代运营低这么多？',
-      a: '因为图南是独立技术合伙人，没有销售团队佣金、没有写字楼租金公摊、所有系统和 AI 工作流均为全栈自研。极低的边际成本让我们能按 SKU 规模灵活报价，而不是一口价吃定工厂。我们也不靠建站暴利赚钱——真正的共赢在于深入车间绑定工厂、积累 SKU 数据库，未来通过大货询价抽佣或联合打造自主品牌变现。'
+      a: '因为大龙是独立技术合伙人，没有销售团队佣金、没有写字楼租金公摊、所有系统和 AI 工作流均为全栈自研。极低的边际成本让我们能按 SKU 规模灵活报价，而不是一口价吃定工厂。我们也不靠建站暴利赚钱——真正的共赢在于深入车间绑定工厂、积累 SKU 数据库，未来通过大货询价抽佣或联合打造自主品牌变现。'
     },
     {
       q: '自研独立站和外面普通的 SaaS（如 Shopify/Shopline）有什么区别？',
@@ -122,12 +122,12 @@ export default function HomePage() {
     },
     {
       q: '我是工厂厂长，没有专职外贸团队怎么办？',
-      a: '这正是"出海合伙人"的核心价值。图南具备无缝的英语商务谈判与工程答疑能力。当海外买家通过我们的自研独立站或社媒发送大宗采购询盘时，信息不会因为中转翻译而损耗。我们会直接介入进行英文答疑、核算 FOB 价格，并理顺上海港海运通关，相当于用远低于一个外贸业务员的成本，直接给您配备了一个身在上海、大厂技术背景的海外营销事业部。'
+      a: '这正是"出海合伙人"的核心价值。大龙具备无缝的英语商务谈判与工程答疑能力。当海外买家通过我们的自研独立站或社媒发送大宗采购询盘时，信息不会因为中转翻译而损耗。我们会直接介入进行英文答疑、核算 FOB 价格，并理顺上海港海运通关，相当于用远低于一个外贸业务员的成本，直接给您配备了一个身在上海、大厂技术背景的海外营销事业部。'
     }
   ] : [
     {
       q: 'Why are your fees so much lower than traditional agencies and SaaS platforms?',
-      a: 'Because Tunan operates as an independent partner with former big-tech full-stack architect capabilities. There are no sales commissions, no expensive office overhead, and all translation, data collection, and page generation scripts are automated and self-developed. We price flexibly based on your SKU scale — not a rigid template fee. We don\'t look for short-term quick wins; we bind with your workshop to consolidate product SKUs, securing long-term profits through commission sharing and brand value growth.'
+      a: 'Because Dalong operates as an independent partner with former big-tech full-stack architect capabilities. There are no sales commissions, no expensive office overhead, and all translation, data collection, and page generation scripts are automated and self-developed. We price flexibly based on your SKU scale — not a rigid template fee. We don\'t look for short-term quick wins; we bind with your workshop to consolidate product SKUs, securing long-term profits through commission sharing and brand value growth.'
     },
     {
       q: 'What is the difference between your self-developed B2B site and SaaS templates (like Shopify)?',
@@ -139,7 +139,7 @@ export default function HomePage() {
     },
     {
       q: 'We do not have a dedicated English salesperson at our workshop. How does this work?',
-      a: 'That is exactly why you need a Going-Global Partner. Tunan handles the B2B negotiation, technical specifications, and logistics direct clearings with Shanghai FTZ. When an inquiry lands on your custom website, Tunan answers technical buyer questions, quotes FOB details, and manages container clearing, providing a complete overseas marketing division for a fraction of a junior worker\'s cost.'
+      a: 'That is exactly why you need a Going-Global Partner. Dalong handles the B2B negotiation, technical specifications, and logistics direct clearings with Shanghai FTZ. When an inquiry lands on your custom website, Dalong answers technical buyer questions, quotes FOB details, and manages container clearing, providing a complete overseas marketing division for a fraction of a junior worker\'s cost.'
     }
   ];
 
@@ -299,15 +299,15 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  {/* Part 3: Tunan's Sleek Vector Partner Business Card */}
+                  {/* Part 3: Dalong's Sleek Vector Partner Business Card */}
                   <div className="rounded-2xl border border-slate-200/80 dark:border-takinbot-orange/20 bg-gradient-to-br from-takinbot-orange/5 to-transparent p-3.5 flex items-center gap-4 relative overflow-hidden shadow-md">
                     <div className="absolute top-0 right-0 w-[80px] h-[80px] bg-takinbot-orange/5 rounded-full blur-xl pointer-events-none" />
                     
                     {/* Portrait Image */}
                     <div className="w-14 h-14 rounded-xl border border-takinbot-orange/30 overflow-hidden shrink-0 shadow bg-slate-900 flex items-center justify-center">
                       <img 
-                        src="/img/tunan_portrait.png" 
-                        alt="Tunan Vector Portrait" 
+                        src="/img/dalong_portrait.png" 
+                        alt="Dalong Vector Portrait" 
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           e.currentTarget.src = "/img/logo_dark_mode.png";
@@ -319,7 +319,7 @@ export default function HomePage() {
                     <div className="space-y-1 text-left flex-grow">
                       <div className="flex items-center gap-1.5">
                         <span className="text-[11px] font-heading font-black text-slate-900 dark:text-white">
-                          {language === 'zh' ? '出海合伙人：图南' : 'Partner: Tunan'}
+                          {language === 'zh' ? '出海合伙人：大龙' : 'Partner: Dalong'}
                         </span>
                         <span className="text-[7.5px] font-mono font-bold text-takinbot-orange border border-takinbot-orange/30 px-1 rounded uppercase">
                           FOUNDER
@@ -637,8 +637,8 @@ export default function HomePage() {
 
                 <p className="text-[10px] text-slate-500 text-left mt-6 leading-relaxed font-body">
                   * {language === 'zh'
-                    ? '计算基于常规外贸工厂运营行情。图南提供"纯自研开发与合伙服务"，按 SKU 规模灵活报价，不赚取高昂建站差价，旨在成为您深度绑定的海外事业部。'
-                    : 'Calculations based on industry standards. Tunan provides self-developed partner services with flexible SKU-based pricing — prioritizing long-term factory growth over short-term markups.'}
+                    ? '计算基于常规外贸工厂运营行情。大龙提供"纯自研开发与合伙服务"，按 SKU 规模灵活报价，不赚取高昂建站差价，旨在成为您深度绑定的海外事业部。'
+                    : 'Calculations based on industry standards. Dalong provides self-developed partner services with flexible SKU-based pricing — prioritizing long-term factory growth over short-term markups.'}
                 </p>
               </div>
             </div>
@@ -801,8 +801,8 @@ export default function HomePage() {
           </h2>
           <p className="text-slate-500 text-sm sm:text-base leading-relaxed font-body">
             {language === 'zh' 
-              ? '摆脱高年费中介与低效模板。无论是建立多语言极速车载独立站、搭建海外 LinkedIn 客户矩阵，还是拍摄媲美工业纪录片质感的车间大片，与图南携手，直通全球买家。'
-              : 'Ditch rigid SaaS platforms and ineffective agencies. Partner with Tunan to deploy fast custom portals, script cinematic factory runs, and negotiate contract terms with absolute direct clarity.'}
+              ? '摆脱高年费中介与低效模板。无论是建立多语言极速车载独立站、搭建海外 LinkedIn 客户矩阵，还是拍摄媲美工业纪录片质感的车间大片，与大龙携手，直通全球买家。'
+              : 'Ditch rigid SaaS platforms and ineffective agencies. Partner with Dalong to deploy fast custom portals, script cinematic factory runs, and negotiate contract terms with absolute direct clarity.'}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
             <Link 

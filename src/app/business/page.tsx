@@ -68,7 +68,7 @@ export default function BusinessPage() {
         language === 'zh' ? 'AI 极致赋能，每日生成地道地道外贸英文文案' : 'AI-driven daily high-quality B2B English copy',
         language === 'zh' ? '精准定位海外分销经理，主动拦截一手盘' : 'Distributors and trade leads proactive sourcing',
         language === 'zh' ? '社媒矩阵互联，每周流量盘点与客户意图追踪' : 'Cross-linked funnel analytics and buyer reports',
-        language === 'zh' ? '由图南流利商务英语直连答疑，询盘无缝沉淀' : 'Direct negotiation in English by Tunan'
+        language === 'zh' ? '由大龙流利商务英语直连答疑，询盘无缝沉淀' : 'Direct negotiation in English by Dalong'
       ]
     },
     {
@@ -111,7 +111,7 @@ export default function BusinessPage() {
           </h1>
           <p className="text-sm sm:text-base text-slate-500 max-w-xl mx-auto font-body">
             {language === 'zh'
-              ? '不招昂贵的外贸销售，不用笨重的传统代运营。图南用全栈代码、短视频与 AI 技术，帮工厂打破信息差。'
+              ? '不招昂贵的外贸销售，不用笨重的传统代运营。大龙用全栈代码、短视频与 AI 技术，帮工厂打破信息差。'
               : 'Ditch heavy agency packages. We implement custom high-speed code, native English B2B contract negotiations, and direct pipelines.'}
           </p>
         </div>

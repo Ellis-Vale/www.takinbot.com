@@ -92,9 +92,9 @@ def make_video():
             "img": "scene_oil_packing.png",
             "brand": "takinbot • 专属“海外营销事业部”",
             "title": "YOUR EXPORT DEPARTMENT",
-            "tagline": "合伙人大龙英语跟进 · 长期同盟共赢",
+            "tagline": "合伙人图南英语跟进 · 长期同盟共赢",
             "bullets": [
-                "✔ 技术合伙人大龙流利商务英语直接沟通，无信息损耗",
+                "✔ 技术合伙人图南流利商务英语直接沟通，无信息损耗",
                 "✔ 上海港拖车、报关、商检拼箱一站式跑通，离岸无忧",
                 "✔ 品类独占保障：每个行业仅服务一家工厂，拒绝内卷"
             ]
@@ -204,7 +204,7 @@ def make_video():
     print(f"All {frame_counter} frames written to temporary directory. Starting FFMPEG...")
 
     # 6. Call FFMPEG to compile the PNG frames into a gorgeous 1080p, 60fps MP4 video
-    output_video_path = os.path.join(output_dir, "dalong_product_intro.mp4")
+    output_video_path = os.path.join(output_dir, "tunan_product_intro.mp4")
     if os.path.exists(output_video_path):
         os.remove(output_video_path)
         

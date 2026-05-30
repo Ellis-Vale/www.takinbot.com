@@ -13,22 +13,123 @@ export default function Footer() {
         
         {/* SOHO Creator Brand Logo and Info */}
         <div className="md:col-span-1 space-y-4">
-          <svg className="h-8 w-32 shrink-0" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg className="h-8 w-[133px] shrink-0" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="text-orange-f" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#FF8C00" />
+              <linearGradient id="chromeGradF" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFFFFF" />
+                <stop offset="25%" stopColor="#E2E8F0" />
+                <stop offset="50%" stopColor="#94A3B8" />
+                <stop offset="75%" stopColor="#475569" />
+                <stop offset="100%" stopColor="#1E293B" />
+              </linearGradient>
+
+              <linearGradient id="silverGradF" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#F8FAFC" />
+                <stop offset="100%" stopColor="#CBD5E1" />
+              </linearGradient>
+
+              <linearGradient id="cyanGradF" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#00F2FE" />
+                <stop offset="50%" stopColor="#38BDF8" />
+                <stop offset="100%" stopColor="#0284C7" />
+              </linearGradient>
+
+              <linearGradient id="orangeGradF" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFB74D" />
+                <stop offset="50%" stopColor="#FF6B00" />
+                <stop offset="100%" stopColor="#D84315" />
+              </linearGradient>
+
+              <linearGradient id="cyberBorderGradF" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00F2FE" />
+                <stop offset="35%" stopColor="#38BDF8" />
+                <stop offset="50%" stopColor="#FAFAFA" />
+                <stop offset="65%" stopColor="#FFB74D" />
                 <stop offset="100%" stopColor="#FF6B00" />
               </linearGradient>
+
+              <linearGradient id="titaniumGradF" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#94A3B8" />
+                <stop offset="50%" stopColor="#475569" />
+                <stop offset="100%" stopColor="#0F172A" />
+              </linearGradient>
+
+              <filter id="cyanGlowF" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              <filter id="orangeGlowF" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
             </defs>
-            <g>
-              <text x="0" y="24" fontFamily="'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI', sans-serif" fontWeight="900" fontSize="20" letterSpacing="0.02em" className="fill-slate-900 dark:fill-white transition-colors duration-300">
-                拓新<tspan fill="url(#text-orange-f)">搏图</tspan>
-              </text>
-              <text x="1" y="35" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="7" letterSpacing="0.19em" className="fill-slate-500 dark:fill-slate-400">
-                GOING-GLOBAL PARTNER
-              </text>
+
+            {/* Left: Symmetrical/Dual-Color Brand Takin Head Emblem (scaled to fit 44x44 area) */}
+            <g transform="translate(2, 2) scale(0.44)">
+              <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGradF)" strokeWidth="3" opacity="0.2" filter="url(#cyanGlowF)" />
+              <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGradF)" strokeWidth="1.5" />
+
+              <g id="takin-cyber-head-f">
+                <polygon points="50,42 30,22 12,28 28,42" fill="url(#chromeGradF)" />
+                <polygon points="30,22 12,28 32,32" fill="#0F172A" opacity="0.5" />
+
+                <polygon points="50,42 70,22 88,28 72,42" fill="url(#chromeGradF)" />
+                <polygon points="70,22 88,28 68,32" fill="#0F172A" opacity="0.7" />
+
+                <polygon points="50,42 35,53 24,58 30,22" fill="url(#silverGradF)" />
+                <polygon points="50,42 65,53 76,58 70,22" fill="#94A3B8" opacity="0.9" />
+
+                <polygon points="50,42 50,75 35,53" fill="url(#silverGradF)" />
+                <polygon points="50,42 50,75 65,53" fill="#64748B" />
+
+                <polygon points="35,53 50,75 38,78 24,58" fill="#E2E8F0" />
+                <polygon points="65,53 50,75 62,78 76,58" fill="#475569" />
+
+                <polygon points="50,75 38,78 50,88" fill="url(#chromeGradF)" />
+                <polygon points="50,75 62,78 50,88" fill="#334155" />
+
+                <polygon points="30,46 45,49 46,50.5 31,47.5" fill="url(#cyanGradF)" filter="url(#cyanGlowF)" />
+                <polygon points="70,46 55,49 54,50.5 69,47.5" fill="url(#orangeGradF)" filter="url(#orangeGlowF)" />
+
+                <line x1="50" y1="42" x2="50" y2="75" stroke="url(#cyberBorderGradF)" strokeWidth="0.75" opacity="0.35" filter="url(#cyanGlowF)" />
+                <line x1="35" y1="53" x2="65" y2="53" stroke="url(#cyberBorderGradF)" strokeWidth="0.5" opacity="0.25" />
+
+                <path d="M50 68L38 78L50 88" fill="none" stroke="#00F2FE" strokeWidth="1.2" opacity="0.4" filter="url(#cyanGlowF)" />
+                <path d="M50 68L62 78L50 88" fill="none" stroke="#FF6B00" strokeWidth="1.2" opacity="0.4" filter="url(#orangeGlowF)" />
+              </g>
+            </g>
+
+            {/* Right Side Brand Name & Subtitle */}
+            <g transform="translate(52, 0)">
+              {language === 'en' ? (
+                <>
+                  <text x="0" y="27" fontFamily="'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" fontWeight="800" fontSize="22" letterSpacing="-0.02em">
+                    <tspan fill="url(#titaniumGradF)">takin</tspan><tspan fill="url(#orangeGradF)">bot</tspan>
+                  </text>
+                  <text x="1" y="38" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="7" letterSpacing="0.12em" fill="#64748B">
+                    GOING-GLOBAL PARTNER
+                  </text>
+                </>
+              ) : (
+                <>
+                  <text x="0" y="27" fontFamily="'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI', sans-serif" fontWeight="900" fontSize="20" letterSpacing="0.04em">
+                    <tspan fill="url(#titaniumGradF)">拓新</tspan><tspan fill="url(#orangeGradF)">搏图</tspan>
+                  </text>
+                  <text x="1" y="38" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="7" letterSpacing="0.15em" fill="#64748B">
+                    出海合伙人
+                  </text>
+                </>
+              )}
             </g>
           </svg>
+
           <p className="text-xs text-slate-650 dark:text-slate-400 leading-relaxed font-body">
             {language === 'en' 
               ? 'takinbot is a multi-disciplinary independent SOHO maker and trading brand based in Shanghai, leveraging engineering depth and AI automation to deliver custom hardware, trade sourcing, and software systems.'
@@ -82,7 +183,7 @@ export default function Footer() {
           <h4 className="font-heading text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
             {language === 'en' ? 'Direct SOHO Office' : '直连创客办公室'}
           </h4>
-          <div className="space-y-2 text-slate-600 dark:text-slate-400">
+          <div className="space-y-2 text-slate-650 dark:text-slate-400">
             <p>
               <span className="text-slate-900 dark:text-white font-semibold">{language === 'en' ? 'HQ Location' : '联络地址'}: </span>
               {language === 'en' ? 'Zhangjiang High-Tech Park, Pudong, Shanghai, China' : '中国上海浦东张江高科技园区'}

@@ -29,25 +29,125 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-[#0B0F19]/80 backdrop-blur-md border-b border-slate-200/50 dark:border-white/5 transition-colors duration-300" role="banner">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
         
-        {/* Brand Typography Logo - takinbot */}
-        <Link href="/" className="flex items-center gap-3 group" aria-label="takinbot Home">
-          <svg className="h-10 w-40 shrink-0" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <Link href="/" className="flex items-center gap-2 group" aria-label="takinbot Home">
+          <svg className="h-10 w-[166px] shrink-0" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <linearGradient id="text-orange" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#FF8C00" />
+              <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFFFFF" />
+                <stop offset="25%" stopColor="#E2E8F0" />
+                <stop offset="50%" stopColor="#94A3B8" />
+                <stop offset="75%" stopColor="#475569" />
+                <stop offset="100%" stopColor="#1E293B" />
+              </linearGradient>
+
+              <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stopColor="#F8FAFC" />
+                <stop offset="100%" stopColor="#CBD5E1" />
+              </linearGradient>
+
+              <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#00F2FE" />
+                <stop offset="50%" stopColor="#38BDF8" />
+                <stop offset="100%" stopColor="#0284C7" />
+              </linearGradient>
+
+              <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#FFB74D" />
+                <stop offset="50%" stopColor="#FF6B00" />
+                <stop offset="100%" stopColor="#D84315" />
+              </linearGradient>
+
+              <linearGradient id="cyberBorderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00F2FE" />
+                <stop offset="35%" stopColor="#38BDF8" />
+                <stop offset="50%" stopColor="#FAFAFA" />
+                <stop offset="65%" stopColor="#FFB74D" />
                 <stop offset="100%" stopColor="#FF6B00" />
               </linearGradient>
+
+              <linearGradient id="titaniumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#94A3B8" />
+                <stop offset="50%" stopColor="#475569" />
+                <stop offset="100%" stopColor="#0F172A" />
+              </linearGradient>
+
+              <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+
+              <filter id="orangeGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="1" result="blur" />
+                <feMerge>
+                  <feMergeNode in="blur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
             </defs>
-            <g>
-              <text x="0" y="24" fontFamily="'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" fontWeight="800" fontSize="22" letterSpacing="-0.02em" className="fill-slate-900 dark:fill-white transition-colors duration-300">
-                takin<tspan fill="url(#text-orange)">bot</tspan>
-              </text>
-              <text x="1" y="35" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="7" letterSpacing="0.19em" className="fill-slate-500 dark:fill-slate-400">
-                {language === 'en' ? 'GOING-GLOBAL PARTNER' : '出海合伙人'}
-              </text>
+
+            {/* Left: Symmetrical/Dual-Color Brand Takin Head Emblem (scaled to fit 44x44 area) */}
+            <g transform="translate(2, 2) scale(0.44)">
+              <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGrad)" strokeWidth="3" opacity="0.2" filter="url(#cyanGlow)" />
+              <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGrad)" strokeWidth="1.5" />
+
+              <g id="takin-cyber-head">
+                <polygon points="50,42 30,22 12,28 28,42" fill="url(#chromeGrad)" />
+                <polygon points="30,22 12,28 32,32" fill="#0F172A" opacity="0.5" />
+
+                <polygon points="50,42 70,22 88,28 72,42" fill="url(#chromeGrad)" />
+                <polygon points="70,22 88,28 68,32" fill="#0F172A" opacity="0.7" />
+
+                <polygon points="50,42 35,53 24,58 30,22" fill="url(#silverGrad)" />
+                <polygon points="50,42 65,53 76,58 70,22" fill="#94A3B8" opacity="0.9" />
+
+                <polygon points="50,42 50,75 35,53" fill="url(#silverGrad)" />
+                <polygon points="50,42 50,75 65,53" fill="#64748B" />
+
+                <polygon points="35,53 50,75 38,78 24,58" fill="#E2E8F0" />
+                <polygon points="65,53 50,75 62,78 76,58" fill="#475569" />
+
+                <polygon points="50,75 38,78 50,88" fill="url(#chromeGrad)" />
+                <polygon points="50,75 62,78 50,88" fill="#334155" />
+
+                <polygon points="30,46 45,49 46,50.5 31,47.5" fill="url(#cyanGrad)" filter="url(#cyanGlow)" />
+                <polygon points="70,46 55,49 54,50.5 69,47.5" fill="url(#orangeGrad)" filter="url(#orangeGlow)" />
+
+                <line x1="50" y1="42" x2="50" y2="75" stroke="url(#cyberBorderGrad)" strokeWidth="0.75" opacity="0.35" filter="url(#cyanGlow)" />
+                <line x1="35" y1="53" x2="65" y2="53" stroke="url(#cyberBorderGrad)" strokeWidth="0.5" opacity="0.25" />
+
+                <path d="M50 68L38 78L50 88" fill="none" stroke="#00F2FE" strokeWidth="1.2" opacity="0.4" filter="url(#cyanGlow)" />
+                <path d="M50 68L62 78L50 88" fill="none" stroke="#FF6B00" strokeWidth="1.2" opacity="0.4" filter="url(#orangeGlow)" />
+              </g>
+            </g>
+
+            {/* Right Side Brand Name & Subtitle */}
+            <g transform="translate(52, 0)">
+              {language === 'en' ? (
+                <>
+                  <text x="0" y="27" fontFamily="'Plus Jakarta Sans', 'Inter', 'Segoe UI', sans-serif" fontWeight="800" fontSize="22" letterSpacing="-0.02em">
+                    <tspan fill="url(#titaniumGrad)">takin</tspan><tspan fill="url(#orangeGrad)">bot</tspan>
+                  </text>
+                  <text x="1" y="38" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="7" letterSpacing="0.12em" fill="#64748B">
+                    GOING-GLOBAL PARTNER
+                  </text>
+                </>
+              ) : (
+                <>
+                  <text x="0" y="27" fontFamily="'PingFang SC', 'Microsoft YaHei', 'Hiragino Sans GB', 'Segoe UI', sans-serif" fontWeight="900" fontSize="20" letterSpacing="0.04em">
+                    <tspan fill="url(#titaniumGrad)">拓新</tspan><tspan fill="url(#orangeGrad)">搏图</tspan>
+                  </text>
+                  <text x="1" y="38" fontFamily="'Inter', sans-serif" fontWeight="700" fontSize="7" letterSpacing="0.15em" fill="#64748B">
+                    出海合伙人
+                  </text>
+                </>
+              )}
             </g>
           </svg>
         </Link>
+
 
         {/* Absolutely Centered Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2" aria-label="Main Navigation">

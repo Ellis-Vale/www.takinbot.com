@@ -1,17 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <g transform="matrix(0.018, 0, 0, -0.018, -22.2, 77.3)">
-    <!-- B in Cyber Orange -->
-    <path fill="#FF6B00" d="M2836 3528 c-70 -89 -118 -166 -114 -186 3 -15 27 -18 238 -22
-     215 -5 237 -7 261 -25 27 -20 49 -65 49 -99 0 -9 -7 -30 -15 -46 -30 -58 -35
-     -59 -476 -62 -222 -2 -410 -7 -416 -11 -10 -6 -13 -92 -13 -373 0 -338 1 -365
-     18 -372 32 -13 903 -7 947 7 188 59 275 167 275 342 0 119 -27 186 -101 253
-     l-51 46 44 49 c54 60 68 103 68 213 0 74 -4 92 -30 146 -75 149 -202 202 -485
-     202 l-150 0 -49 -62z m355 -696 c68 -6 100 -36 106 -98 7 -69 -7 -97 -61 -123
-     -43 -20 -60 -21 -326 -21 l-279 0 2 118 c1 65 6 120 12 124 10 8 464 8 546
-     0z"/>
-    <!-- T in Tech Cyan -->
-    <path fill="#00F2FE" d="M1540 3455 l0 -125 208 -2 207 -3 3 -497 2 -498 130 0 130 0 0 500
-     0 500 183 0 182 1 50 70 c28 39 65 91 83 116 17 25 32 49 32 54 0 5 -258 9
-     -605 9 l-605 0 0 -125z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Chrome / Platinum Gradient for metallic sheen -->
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="75%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+
+    <!-- Tech Cyber-Cyan Glow Gradient (Left side glow) -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <!-- Cyber Orange Glow Gradient (Right side glow) -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB74D" />
+      <stop offset="50%" stop-color="#FF6B00" />
+      <stop offset="100%" stop-color="#D84315" />
+    </linearGradient>
+
+    <!-- Cyber Hexagon Border Gradient (Symmetrical transition from Cyan to Orange via silver) -->
+    <linearGradient id="cyberBorderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="35%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#FAFAFA" />
+      <stop offset="65%" stop-color="#FFB74D" />
+      <stop offset="100%" stop-color="#FF6B00" />
+    </linearGradient>
+
+    <!-- Neon Glow Filter for Tech Cyan -->
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Neon Glow Filter for Cyber Orange -->
+    <filter id="orangeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outermost glowing cyber-hexagon border (with dual-color neon ambient glow and sharp inner border) -->
+  <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGrad)" stroke-width="3" opacity="0.2" filter="url(#cyanGlow)" />
+  <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGrad)" stroke-width="1.5" />
+
+  <!-- Cybernetic Faceted Low-Poly Takin (Budorcas taxicolor) Head Design -->
+  <g id="takin-cyber-head">
+    <!-- Left Horn (faceted brushed steel/chrome) -->
+    <polygon points="50,42 30,22 12,28 28,42" fill="url(#chromeGrad)" />
+    <polygon points="30,22 12,28 32,32" fill="#0F172A" opacity="0.5" />
+
+    <!-- Right Horn (faceted brushed steel/chrome) -->
+    <polygon points="50,42 70,22 88,28 72,42" fill="url(#chromeGrad)" />
+    <polygon points="70,22 88,28 68,32" fill="#0F172A" opacity="0.7" />
+
+    <!-- Forehead Plate Left -->
+    <polygon points="50,42 35,53 24,58 30,22" fill="url(#silverGrad)" />
+    
+    <!-- Forehead Plate Right -->
+    <polygon points="50,42 65,53 76,58 70,22" fill="#94A3B8" opacity="0.9" />
+
+    <!-- Center Forehead Bridge (Sleek light-catching core) -->
+    <polygon points="50,42 50,75 35,53" fill="url(#silverGrad)" />
+    <polygon points="50,42 50,75 65,53" fill="#64748B" />
+
+    <!-- Outer Cheeks / Cyber Muzzle facets -->
+    <polygon points="35,53 50,75 38,78 24,58" fill="#E2E8F0" />
+    <polygon points="65,53 50,75 62,78 76,58" fill="#475569" />
+
+    <!-- Muzzle / Nose (pointing down, strong base) -->
+    <polygon points="50,75 38,78 50,88" fill="url(#chromeGrad)" />
+    <polygon points="50,75 62,78 50,88" fill="#334155" />
+
+    <!-- Symmetrical Robotic Glowing Laser Slit Eyes (Tech Cyan on Left, Cyber Orange on Right) -->
+    <!-- Left Eye -->
+    <polygon points="30,46 45,49 46,50.5 31,47.5" fill="url(#cyanGrad)" filter="url(#cyanGlow)" />
+    
+    <!-- Right Eye -->
+    <polygon points="70,46 55,49 54,50.5 69,47.5" fill="url(#orangeGrad)" filter="url(#orangeGlow)" />
+
+    <!-- Central Cybernet Power-Grid Vector Lines (low opacity details with gradient transition) -->
+    <line x1="50" y1="42" x2="50" y2="75" stroke="url(#cyberBorderGrad)" stroke-width="0.75" opacity="0.35" filter="url(#cyanGlow)" />
+    <line x1="35" y1="53" x2="65" y2="53" stroke="url(#cyberBorderGrad)" stroke-width="0.5" opacity="0.25" />
+
+    <!-- Dynamic high-altitude mountain peak below the head representing 3000m environment (Left Cyan, Right Orange) -->
+    <path d="M50 68L38 78L50 88" fill="none" stroke="#00F2FE" stroke-width="1.2" opacity="0.4" filter="url(#cyanGlow)" />
+    <path d="M50 68L62 78L50 88" fill="none" stroke="#FF6B00" stroke-width="1.2" opacity="0.4" filter="url(#orangeGlow)" />
   </g>
 </svg>

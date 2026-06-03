@@ -88,40 +88,14 @@ export default function Navbar() {
               </filter>
             </defs>
 
-            {/* Left: Symmetrical/Dual-Color Brand Takin Head Emblem (scaled to fit 44x44 area) */}
-            <g transform="translate(2, 2) scale(0.44)">
-              <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGrad)" strokeWidth="3" opacity="0.2" filter="url(#cyanGlow)" />
-              <polygon points="50,3 90,26 90,74 50,97 10,74 10,26" fill="none" stroke="url(#cyberBorderGrad)" strokeWidth="1.5" />
-
-              <g id="takin-cyber-head">
-                <polygon points="50,42 30,22 12,28 28,42" fill="url(#chromeGrad)" />
-                <polygon points="30,22 12,28 32,32" fill="#0F172A" opacity="0.5" />
-
-                <polygon points="50,42 70,22 88,28 72,42" fill="url(#chromeGrad)" />
-                <polygon points="70,22 88,28 68,32" fill="#0F172A" opacity="0.7" />
-
-                <polygon points="50,42 35,53 24,58 30,22" fill="url(#silverGrad)" />
-                <polygon points="50,42 65,53 76,58 70,22" fill="#94A3B8" opacity="0.9" />
-
-                <polygon points="50,42 50,75 35,53" fill="url(#silverGrad)" />
-                <polygon points="50,42 50,75 65,53" fill="#64748B" />
-
-                <polygon points="35,53 50,75 38,78 24,58" fill="#E2E8F0" />
-                <polygon points="65,53 50,75 62,78 76,58" fill="#475569" />
-
-                <polygon points="50,75 38,78 50,88" fill="url(#chromeGrad)" />
-                <polygon points="50,75 62,78 50,88" fill="#334155" />
-
-                <polygon points="30,46 45,49 46,50.5 31,47.5" fill="url(#cyanGrad)" filter="url(#cyanGlow)" />
-                <polygon points="70,46 55,49 54,50.5 69,47.5" fill="url(#orangeGrad)" filter="url(#orangeGlow)" />
-
-                <line x1="50" y1="42" x2="50" y2="75" stroke="url(#cyberBorderGrad)" strokeWidth="0.75" opacity="0.35" filter="url(#cyanGlow)" />
-                <line x1="35" y1="53" x2="65" y2="53" stroke="url(#cyberBorderGrad)" strokeWidth="0.5" opacity="0.25" />
-
-                <path d="M50 68L38 78L50 88" fill="none" stroke="#00F2FE" strokeWidth="1.2" opacity="0.4" filter="url(#cyanGlow)" />
-                <path d="M50 68L62 78L50 88" fill="none" stroke="#FF6B00" strokeWidth="1.2" opacity="0.4" filter="url(#orangeGlow)" />
-              </g>
-            </g>
+            {/* Left: Symmetrical/Dual-Color Brand Takin Head Emblem (scaled to fit 44x44 area) - Zoomed & Cropped for maximum recognizability */}
+            <image 
+              href="/img/takinbot_brand_logo_flat.webp" 
+              x="-3" 
+              y="-3" 
+              width="54" 
+              height="54" 
+            />
 
             {/* Right Side Brand Name & Subtitle */}
             <g transform="translate(52, 0)">

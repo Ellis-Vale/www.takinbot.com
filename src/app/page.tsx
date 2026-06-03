@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import {
@@ -13,7 +14,11 @@ import {
   CheckCircle2,
   HelpCircle,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Handshake,
+  DollarSign,
+  MessageSquareText,
+  Megaphone
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -25,22 +30,22 @@ export default function HomePage() {
 
   const slides = [
     {
-      img: '/img/oem_catalog_app_mockup.png',
+      img: '/img/oem_catalog_app_mockup.webp',
       title: language === 'zh' ? '1. 独立站数字化展厅' : '1. Digital Product Catalog',
       desc: language === 'zh' ? '6,000+ SKU 车辆数据交叉检索，海外买家秒级定位产品并触发询盘' : '6,000+ SKU cross-references, live search catalog',
     },
     {
-      img: '/img/consumerlens_market_radar.png',
+      img: '/img/consumerlens_market_radar.webp',
       title: language === 'zh' ? '2. ConsumerLens 趋势罗盘与社媒拦截' : '2. ConsumerLens Trends & Active Intercept',
       desc: language === 'zh' ? '海关进出口大数据热力图与Amazon痛点分析，以硬核数据主动拦截精准采购商' : 'Customs big data & Amazon pain points analysis to intercept global buyers',
     },
     {
-      img: '/img/director_client_workshop.png',
+      img: '/img/director_client_workshop.webp',
       title: language === 'zh' ? '3. 专属“海外营销事业部”与实地谈判' : '3. Dedicated Export & Workshop Negotiation',
       desc: language === 'zh' ? '图南流利双语直接谈判大宗订单，大买家实地验厂，上海港清关发运全球' : 'Direct bilingual negotiation, global buyer audits, and Waigaoqiao FTZ clearings',
     },
     {
-      img: '/img/tunan_app_product_listing_ui.png',
+      img: '/img/tunan_app_product_listing_ui.webp',
       title: language === 'zh' ? '4. AI 产品运营自动化（手机端一键上架）' : '4. AI Product Operations Automation',
       desc: language === 'zh' ? '厂长拍照说几句话，AI 自动生成多语言产品详情与FOB报价，一键推送到官网上线' : 'Take a photo, say a few words, and AI lists the product onto the global portal instantly',
     }
@@ -149,8 +154,8 @@ export default function HomePage() {
       {/* 1. TOP ANNOUNCEMENT BAR */}
       <div className="bg-takinbot-dark dark:bg-takinbot-dark-soft text-slate-300 text-center text-[10px] sm:text-[11px] py-2.5 px-4 border-b border-white/5 tracking-wider font-semibold">
         💡 <span className="text-takinbot-orange font-bold">{language === 'zh' ? '出海试点捷报：' : 'OUTBOUND PILOT REPORT:'}</span> {language === 'zh'
-          ? '汽车滤清器出海案例站 (filtration.takinbot.com) 已上线，6,000+ SKU 跨境独立站及 FOB 询价闭环测试成功，直接拦截一手海外采购商。'
-          : 'Auto filter export showcase (filtration.takinbot.com) goes live, integrating 6,000+ SKU cross-references & FOB inquiries with great success.'}
+          ? '汽车滤清器出海案例站 (filtration.taxicolor.com) 已上线，6,000+ SKU 跨境独立站及 FOB 询价闭环测试成功，直接拦截一手海外采购商。'
+          : 'Auto filter export showcase (filtration.taxicolor.com) goes live, integrating 6,000+ SKU cross-references & FOB inquiries with great success.'}
       </div>
 
       {/* 2. Premium Maker Hero Section */}
@@ -172,9 +177,9 @@ export default function HomePage() {
             <span className="inline-block px-3 py-1 text-[10px] font-extrabold tracking-widest text-takinbot-orange bg-takinbot-orange/10 border border-takinbot-orange/35 rounded-full uppercase animate-pulse">
               {t.hero.badge}
             </span>
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight text-slate-900 dark:text-white">
-              <span className="inline-block whitespace-nowrap">{t.hero.titleFirst}</span> <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-takinbot-orange to-amber-500 bg-clip-text text-transparent inline-block whitespace-nowrap">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold leading-[1.2] tracking-tight text-slate-900 dark:text-white">
+              <span className="inline-block">{t.hero.titleFirst}</span> <br className="hidden sm:block" />
+              <span className="bg-gradient-to-r from-takinbot-orange to-amber-500 bg-clip-text text-transparent inline-block">
                 {t.hero.titleSecond}
               </span>
             </h1>
@@ -306,11 +311,11 @@ export default function HomePage() {
                     {/* Portrait Image */}
                     <div className="w-14 h-14 rounded-xl border border-takinbot-orange/30 overflow-hidden shrink-0 shadow bg-slate-900 flex items-center justify-center">
                       <img 
-                        src="/img/tunan_portrait.png" 
+                        src="/img/tunan_portrait.webp" 
                         alt="Tunan Vector Portrait" 
                         className="w-full h-full object-cover"
                         onError={(e) => {
-                          e.currentTarget.src = "/img/logo_dark_mode.png";
+                          e.currentTarget.src = "/img/logo_dark_mode.webp";
                         }}
                       />
                     </div>
@@ -350,6 +355,151 @@ export default function HomePage() {
             </div>
           </motion.div>
 
+        </div>
+      </section>
+
+      {/* 2.5 BRAND TOTEM & FACTORY VALUE PROPOSITION */}
+      <section className="py-28 bg-[#0B0F17] dark:bg-[#080C14]/95 border-y border-white/5 relative overflow-hidden">
+        {/* Ambient glows */}
+        <div className="absolute right-0 top-0 w-96 h-96 bg-takinbot-orange/3 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute left-10 bottom-0 w-80 h-80 bg-slate-900/40 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="glass-card rounded-3xl p-10 sm:p-16 border border-white/10 relative overflow-hidden bg-white/[0.02]">
+            {/* Corner accent borders */}
+            <div className="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-takinbot-orange/20 rounded-tr-3xl" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 border-b-2 border-l-2 border-takinbot-orange/20 rounded-bl-3xl" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+              {/* Left: Large Logo Emblem */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:col-span-5 flex justify-center items-center"
+              >
+                <div className="relative w-72 h-72 rounded-full bg-white/[0.01] border border-white/10 flex items-center justify-center group shadow-inner">
+                  {/* Outer spinning ring */}
+                  <div className="absolute inset-4 border border-dashed border-white/10 rounded-full animate-[spin_40s_linear_infinite]" />
+                  {/* Inner pulsing ring */}
+                  <div className="absolute inset-8 border border-takinbot-orange/10 rounded-full animate-pulse" />
+
+                  {/* Large Takin Brand Logo */}
+                  <Image
+                    src="/img/takinbot_brand_logo_flat.webp"
+                    alt="TakinBot Brand Logo"
+                    width={176}
+                    height={176}
+                    className="w-44 h-44 drop-shadow-[0_0_25px_rgba(255,107,0,0.25)] group-hover:scale-105 transition-transform duration-500 object-contain"
+                  />
+
+                  <span className="absolute bottom-6 font-mono text-[9px] tracking-widest text-takinbot-orange uppercase font-bold">
+                    {language === 'zh' ? '拓新搏图 • 出海合伙人' : 'TAKINBOT • OUTBOUND PARTNER'}
+                  </span>
+                </div>
+              </motion.div>
+
+              {/* Right: Brand Story + 4 Value Points */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.15 }}
+                className="lg:col-span-7 space-y-6 text-left"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="h-[2px] w-8 bg-takinbot-orange" />
+                  <span className="font-heading text-[10px] font-bold text-takinbot-orange tracking-widest uppercase font-mono">
+                    {language === 'zh' ? '我们的合作承诺' : 'OUR PARTNERSHIP PLEDGE'}
+                  </span>
+                </div>
+                <h2 className="font-heading text-3xl sm:text-4xl font-black text-white leading-tight">
+                  {language === 'zh'
+                    ? '不做中间商，做您的专属出海合伙人。'
+                    : 'Not a Middleman. Your Dedicated Global Partner.'}
+                </h2>
+                <p className="text-sm text-slate-400 leading-relaxed font-body">
+                  {language === 'zh'
+                    ? '如果你敢承诺产品质量、并投入精力研发新品，我们将会在您的行业里只和您一家合作，专注成为您的专属出海合伙人。以下是我们为工厂创造的不可替代价值：'
+                    : 'If you commit to product quality and invest in R&D, we commit to exclusivity — one factory per category, one shared mission. Here is the irreplaceable value we bring to your workshop floor:'}
+                </p>
+
+                {/* 4 Value Points Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  {/* 1. Category Exclusive */}
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-takinbot-orange/30 transition-colors space-y-2 group/card">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-2 bg-takinbot-orange/10 rounded-lg border border-takinbot-orange/20">
+                        <Handshake className="w-4 h-4 text-takinbot-orange" />
+                      </div>
+                      <span className="font-heading text-xs font-bold text-white">
+                        {language === 'zh' ? '品类独家·零利益冲突' : 'Category Exclusive'}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed font-body">
+                      {language === 'zh'
+                        ? '每个细分品类仅深度服务一家工厂，所有技术研发、流量资源、客户关系全部倾注于您。'
+                        : 'One factory per niche — all our tech, traffic, and buyer relationships are exclusively yours.'}
+                    </p>
+                  </div>
+
+                  {/* 2. Full-Stack Global Marketing */}
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-takinbot-orange/30 transition-colors space-y-2 group/card">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-2 bg-takinbot-orange/10 rounded-lg border border-takinbot-orange/20">
+                        <Megaphone className="w-4 h-4 text-takinbot-orange" />
+                      </div>
+                      <span className="font-heading text-xs font-bold text-white">
+                        {language === 'zh' ? '全栈海外营销引擎' : 'Full-Stack Marketing Engine'}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed font-body">
+                      {language === 'zh'
+                        ? 'LinkedIn 开发、WhatsApp 跟单、邮件营销——把客户的采购经理精准带到您的产品面前。'
+                        : 'LinkedIn outreach, WhatsApp follow-ups, email campaigns — we bring procurement managers directly to your products.'}
+                    </p>
+                  </div>
+
+                  {/* 3. Factory Price = Client Price */}
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-takinbot-orange/30 transition-colors space-y-2 group/card">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-2 bg-takinbot-orange/10 rounded-lg border border-takinbot-orange/20">
+                        <DollarSign className="w-4 h-4 text-takinbot-orange" />
+                      </div>
+                      <span className="font-heading text-xs font-bold text-white">
+                        {language === 'zh' ? '出厂价即客户价' : 'Factory Price = Client Price'}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed font-body">
+                      {language === 'zh'
+                        ? '您的出厂价就是给客户的价格。我们只收订阅费和提成费，绝不暗中加价。'
+                        : 'Your ex-works price is the buyer\'s price. We earn subscription + commission only — zero hidden markups.'}
+                    </p>
+                  </div>
+
+                  {/* 4. Closed-Loop Buyer Feedback */}
+                  <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-takinbot-orange/30 transition-colors space-y-2 group/card">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-2 bg-takinbot-orange/10 rounded-lg border border-takinbot-orange/20">
+                        <MessageSquareText className="w-4 h-4 text-takinbot-orange" />
+                      </div>
+                      <span className="font-heading text-xs font-bold text-white">
+                        {language === 'zh' ? '客户反馈闭环' : 'Closed-Loop Feedback'}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed font-body">
+                      {language === 'zh'
+                        ? '客户收到货后的评价、投诉、改进建议——我们翻译整理成您可以直接行动的生产改进指令。'
+                        : 'Post-delivery reviews, complaints, and improvement suggestions — translated into actionable production directives.'}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+
+            </div>
+          </div>
         </div>
       </section>
 
@@ -409,7 +559,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. HIGH FIDELITY PILOT CASE SHOWCASE: filtration.takinbot.com */}
+      {/* 4. HIGH FIDELITY PILOT CASE SHOWCASE: filtration.taxicolor.com */}
       <section className="py-20 max-w-7xl mx-auto px-6" aria-labelledby="pilot-showcase-title">
         <div className="glass-card rounded-3xl p-8 sm:p-12 border border-slate-200/50 dark:border-white/10 shadow-2xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-takinbot-cyan/10 to-transparent rounded-full blur-3xl pointer-events-none" />
@@ -426,7 +576,7 @@ export default function HomePage() {
                 <div className="relative bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden aspect-[4/5] flex flex-col justify-between p-5 shadow-2xl">
                   {/* Top Bar */}
                   <div className="flex items-center justify-between border-b border-white/5 pb-3">
-                    <span className="text-[9px] font-mono text-slate-400">https://filtration.takinbot.com</span>
+                    <span className="text-[9px] font-mono text-slate-400">https://filtration.taxicolor.com</span>
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
                   </div>
                   
@@ -502,7 +652,7 @@ export default function HomePage() {
 
               <div className="pt-4 flex gap-4">
                 <a 
-                  href="https://filtration.takinbot.com" 
+                  href="https://filtration.taxicolor.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-6 py-3.5 bg-gradient-to-r from-takinbot-cyan to-blue-500 text-slate-950 font-heading text-xs font-extrabold uppercase tracking-wider rounded-xl transition-all hover:translate-y-[-2px] hover:shadow-[0_0_20px_rgba(0,242,254,0.4)] flex items-center gap-1.5"
@@ -667,7 +817,7 @@ export default function HomePage() {
               badge: t.divisions.d1Badge,
               title: t.divisions.d1Title,
               desc: t.divisions.d1Desc,
-              link: 'https://filtration.takinbot.com',
+              link: 'https://filtration.taxicolor.com',
               isExternal: true,
               label: t.divisions.d1CTA,
               icon: <Laptop className="w-6 h-6 text-takinbot-orange" />

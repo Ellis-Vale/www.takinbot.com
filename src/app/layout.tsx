@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "takinbot — One-Person SOHO Trade & Technology Portal | 拓新搏图",
   description: "Independent maker brand. 3D design, custom molding accessories, technical outsourcing, global trade sourcing, and AI innovation. Engineered in Shanghai, deployed globally.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.svg?v=2",
   },
 };
 

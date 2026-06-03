@@ -58,7 +58,7 @@ export const dictionary = {
       d1Badge: 'Digital Flagship',
       d1Title: 'Premium Multilingual B2B Website',
       d1Desc: 'We build blisteringly fast, elegant B2B portals matching Apple-style aesthetics. Features a full product SKU library, direct RFQ system, custom client templates, and seamless mobile responsiveness.',
-      d1CTA: 'Visit filtration.takinbot.com Demo',
+      d1CTA: 'Visit filtration.taxicolor.com Demo',
       
       d2Badge: 'Social Media Matrix',
       d2Title: 'Global Social Media Operations',
@@ -71,7 +71,7 @@ export const dictionary = {
       d3CTA: 'Watch Video Standards',
  
       d4Badge: 'Live Showcase Case Study',
-      d4Title: 'Auto Filters Export Portal (filtration.takinbot.com)',
+      d4Title: 'Auto Filters Export Portal (filtration.taxicolor.com)',
       d4Desc: 'Our successful pilot case for automotive filter manufacturers. We consolidated 6,000+ SKUs, designed private label packaging, and built a live FOB pricing catalog that global buyers can search and quote directly.',
       d4CTA: 'Visit Live Pilot Showcase ↗'
     },
@@ -162,7 +162,7 @@ export const dictionary = {
       d1Badge: '数字化旗舰店',
       d1Title: '高颜值多语言外贸独立站',
       d1Desc: '我们为您开发响应极快、比肩 Apple 官网设计的独立站。具备完整的产品 SKU 信息库、动态维护、自动多语言翻译及精密的询价追踪系统，全面通过移动端自适应。',
-      d1CTA: '访问 filtration.takinbot.com 案例演示站',
+      d1CTA: '访问 filtration.taxicolor.com 案例演示站',
       
       d2Badge: '海外社媒矩阵',
       d2Title: '海外社媒矩阵代运营',
@@ -175,7 +175,7 @@ export const dictionary = {
       d3CTA: '看我们的视频交付标准',
  
       d4Badge: '试点案例展示',
-      d4Title: '汽车滤清器出海案例 filtration.takinbot.com',
+      d4Title: '汽车滤清器出海案例 filtration.taxicolor.com',
       d4Desc: '作为我们首个成功跑通的出海案例——汽车滤清器独立站。我们为该工厂整理了 6,000+ SKU，设计了全套贴牌体系与 FOB 询价机制，海外买家可直接搜索、比价、下单。',
       d4CTA: '点击访问现场案例 ↗'
     },

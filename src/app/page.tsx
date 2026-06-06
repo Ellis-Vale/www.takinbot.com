@@ -77,14 +77,27 @@ export default function V2Page() {
     e.preventDefault();
     if (!inquiryCompany || !inquiryName || !inquiryContactInfo) return;
     setInquirySubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: inquiryName.trim(),
+          email: inquiryContactInfo.trim(),
+          message: `Company: ${inquiryCompany.trim()}\nNotes: ${inquiryNotes.trim() || '—'}`,
+          page: window.location.href,
+          website: '',
+        }),
+      });
+      if (res.ok) {
+        setInquirySubmitted(true);
+        setInquiryCompany('');
+        setInquiryName('');
+        setInquiryContactInfo('');
+        setInquiryNotes('');
+      }
+    } catch {}
     setInquirySubmitting(false);
-    setInquirySubmitted(true);
-    // Reset fields
-    setInquiryCompany('');
-    setInquiryName('');
-    setInquiryContactInfo('');
-    setInquiryNotes('');
   };
 
   if (!mounted) {
@@ -403,6 +416,10 @@ export default function V2Page() {
                   </div>
                 ) : (
                   <form onSubmit={handleInquirySubmit} className="space-y-4 text-left">
+                    {/* Honeypot — hidden from humans, filled by bots */}
+                    <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">
+                      <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+                    </div>
                     <h3 className="text-base font-bold font-sans text-white border-b border-white/5 pb-3">
                       {t.contact.formTitle}
                     </h3>

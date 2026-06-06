@@ -9,6 +9,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
   const pathname = usePathname();
+  if (pathname === '/' || (pathname && pathname.startsWith('/v2'))) return null;
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
   const [mounted, setMounted] = useState(false);
@@ -19,7 +20,7 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: t.nav.home, path: '/' },
+    { name: t.nav.home, path: '/v1' },
     { name: t.nav.story, path: '/story' },
     { name: t.nav.business, path: '/business' },
     { name: t.nav.contact, path: '/contact' },
@@ -29,7 +30,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-[#0B0F19]/80 backdrop-blur-md border-b border-slate-200/50 dark:border-white/5 transition-colors duration-300" role="banner">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between relative">
         
-        <Link href="/" className="flex items-center gap-2 group" aria-label="takinbot Home">
+        <Link href="/v1" className="flex items-center gap-2 group" aria-label="takinbot Home">
           <svg className="h-10 w-[166px] shrink-0" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">

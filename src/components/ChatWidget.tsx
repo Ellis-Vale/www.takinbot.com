@@ -1,11 +1,14 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function ChatWidget() {
+  const pathname = usePathname();
+  if (pathname === '/' || (pathname && pathname.startsWith('/v2'))) return null;
   const { language } = useLanguage();
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');

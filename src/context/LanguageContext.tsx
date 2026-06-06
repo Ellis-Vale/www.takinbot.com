@@ -234,12 +234,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       if (stored === 'en' || stored === 'zh') {
         setLanguageState(stored);
       } else {
-        const navLang = navigator.language.toLowerCase();
-        if (navLang.startsWith('zh')) {
-          setLanguageState('zh');
-        } else {
-          setLanguageState('en');
-        }
+        setLanguageState('zh');
       }
     } catch (e) {
       console.error('Error loading language setting:', e);

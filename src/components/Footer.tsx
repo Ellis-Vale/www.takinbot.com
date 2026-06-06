@@ -2,9 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === '/' || (pathname && pathname.startsWith('/v2'))) return null;
   const { t, language } = useLanguage();
 
   return (

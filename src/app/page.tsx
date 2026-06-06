@@ -299,21 +299,7 @@ export default function V2Page() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            {/* Card 1: Sovereign Showroom */}
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-[#D32F2F]/30 dark:hover:border-[#D4AF37]/30 transition-all group flex flex-col justify-between text-left">
-              <div className="space-y-4">
-                <div className="p-3 bg-[#0D253F]/5 dark:bg-white/5 border border-[#0D253F]/10 dark:border-white/10 rounded-xl w-fit group-hover:bg-[#0D253F] group-hover:text-white transition-colors duration-300">
-                  <ShieldCheck className="w-6 h-6 text-[#0D253F] group-hover:text-white dark:text-[#D4AF37]" />
-                </div>
-                <div className="space-y-2">
-                  <span className="text-[9px] font-extrabold tracking-widest text-[#D32F2F] uppercase">{t.capabilities.c1Badge}</span>
-                  <h3 className="text-base font-bold text-[#0d253f] dark:text-white tracking-tight">{t.capabilities.c1Title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-body">{t.capabilities.c1Desc}</p>
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             {/* Card 2: SKU Search */}
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-[#D32F2F]/30 dark:hover:border-[#D4AF37]/30 transition-all group flex flex-col justify-between text-left">
